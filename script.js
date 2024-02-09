@@ -2,6 +2,49 @@ const qs = (selector) => document.querySelector(selector);
 const question = qs(".question");
 const gif = qs(".gif");
 const [yesBtn, noBtn] = [".yes-btn", ".no-btn"].map(qs);
+const csText = qs('.csText');
+
+
+
+const csTextOptions = [
+  'Our love is like a loop - endless and always running 💖',
+  'You are my favorite function in the program of life 🥰',
+  'My heart overflows with love for you, no stack error 🐣 ',
+  'You decrypt my heart every time you smile 🌝',
+  'In my world, you are the constant, not a variable ❤️‍🔥',
+];
+
+const gifOptions = [
+  'https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif',
+  'https://i.gifer.com/1YQ7.gif',
+  'https://i.gifer.com/cfE.gif',
+  'https://i.gifer.com/6YEs.gif',
+  'https://i.gifer.com/7V0.gif',
+  
+];
+
+function playAudio() {
+  var audio = document.getElementById('myAudio');
+  audio.play();
+}
+
+const setRandomCsText = () => {
+  const randomIndex = Math.floor(Math.random() * csTextOptions.length);
+  csText.textContent = csTextOptions[randomIndex];
+};
+
+const setRandomGif = () => {
+  const randomIndex = Math.floor(Math.random() * gifOptions.length);
+  gif.src = gifOptions[randomIndex];
+};
+
+setRandomCsText();
+setRandomGif();
+
+
+
+
+
 
 const handleYesClick = () => {
   question.innerHTML = "Yeahhhhhhhhhhh! See you tomorrow!!";
@@ -13,7 +56,13 @@ const handleYesClick = () => {
   // Remove the noBtn from the DOM
   noBtn.remove();
 
-  // Define predefined romantic date ideas
+
+
+
+  // Function to set a random GIF to the gif element
+ 
+
+//   // Define predefined romantic date ideas
   const dateIdeas = [
     "Cook a romantic dinner together",
     "Go for a moonlit walk on the beach",
@@ -158,3 +207,6 @@ const handleNoMouseOver = () => {
 
 yesBtn.addEventListener("click", handleYesClick);
 noBtn.addEventListener("mouseover", handleNoMouseOver);
+
+
+
