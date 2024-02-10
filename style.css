@@ -95,9 +95,11 @@ h2 {
 }
 
 .gif {
-    max-width: 80%;
-    height: auto;
-    margin: 20px auto; /* Center the GIF within the wrapper */
+    height: 290px;
+    width: 290px;
+     display: block;
+    margin: auto;
+
 }
 
 .btn-group {
